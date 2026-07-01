@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==============================
+   MISE EN PAGE GENERALE - Flexbox
+   Desktop : 2 colonnes cote a cote
+   ============================== */
+.portail {
+    display: flex;
+    flex: 1;
+}
+
+/* ==============================
+   COLONNE ILLUSTRATION (gauche)
+   ============================== */
+.illustration {
+    flex: 1;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.illustration h2 {
+    /* Typographie fluide : s'adapte a la largeur d'ecran sans rupture brutale */
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    margin-bottom: 20px;
+}
+
+.illustration ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.illustration li {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* ==============================
+   COLONNE FORMULAIRE (droite)
+   ============================== */
+.connexion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.connexion h1 {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    color: #1d4ed8;
+}
+
+.sous-titre {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* ==============================
+   FORMULAIRE - Ergonomie tactile
+   ============================== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+/* Champs de saisie : hauteur min 44px + police 16px minimum
+   pour eviter le zoom automatique d'iOS Safari au focus */
+form input[type="text"],
+form input[type="password"] {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    outline: none;
+    border-color: #1d4ed8;
+}
+
+.case-charte {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.case-charte input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Bouton de soumission : zone de contact tactile >= 44px */
+form input[type="submit"] {
+    min-height: 44px;
+    margin-top: 25px;
+    background-color: #1d4ed8;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1e40af;
+}
+
+/* ==============================
+   PIED DE PAGE - Flexbox
+   ============================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 30px;
+    background-color: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+footer a {
+    display: inline-block;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+
+footer a:hover {
+    background-color: #1e40af;
+}
+
+/* ==============================
+   RESPONSIVE - Smartphone
+   Masquage total de l'illustration
+   pour economiser la bande passante
+   ============================== */
+@media (max-width: 768px) {
+    .illustration {
+        display: none;
+    }
+
+    .connexion {
+        padding: 25px;
+        max-width: 100%;
+    }
+}

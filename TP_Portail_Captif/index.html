@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infratech-Guest — Portail Captif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="portail">
+
+        <!-- COLONNE ILLUSTRATION : masquee sur mobile via display:none -->
+        <aside class="illustration">
+            <h2>Consignes de sécurité Data Center</h2>
+            <ul>
+                <li>Badge d'accès obligatoire et visible en permanence</li>
+                <li>Interdiction de laisser une porte à badge ouverte (talonnage)</li>
+                <li>Aucun objet personnel dans la salle serveurs</li>
+                <li>Signaler immédiatement toute personne non accompagnée</li>
+                <li>Respecter les zones de circulation délimitées au sol</li>
+            </ul>
+        </aside>
+
+        <!-- COLONNE FORMULAIRE : toujours visible -->
+        <section class="connexion">
+            <h1>Infratech-Guest</h1>
+            <p class="sous-titre">Portail d'authentification Wi-Fi invité</p>
+
+            <form>
+                <label for="identifiant">Identifiant / Code temporaire</label>
+                <input type="text" id="identifiant" name="identifiant" placeholder="ex : INVITE-2461">
+
+                <label for="motdepasse">Mot de passe</label>
+                <input type="password" id="motdepasse" name="motdepasse" placeholder="Votre mot de passe">
+
+                <label class="case-charte">
+                    <input type="checkbox" id="charte" name="charte">
+                    J'accepte la charte informatique de l'entreprise
+                </label>
+
+                <input type="submit" value="Se connecter">
+            </form>
+        </section>
+
+    </div>
+
+    <!-- PIED DE PAGE : lien vers le profil GitHub -->
+    <footer>
+        <span>Infratech-Guest © 2026</span>
+        <a href="https://github.com/smasher589" target="_blank" rel="noopener noreferrer">GitHub : smasher589</a>
+    </footer>
+
+</body>
+</html>
