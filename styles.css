@@ -232,29 +232,15 @@ footer {
 footer a {
     display: inline-block;
     background-color: #2563eb;
-    background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0px, transparent 10px,
-        rgba(255, 255, 255, 0.55) 10px, rgba(255, 255, 255, 0.55) 14px,
-        transparent 14px, transparent 24px
-    );
-    background-size: 200% 100%;
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     padding: 5px 14px;
     border-radius: 20px;
-    animation: vague-pixel 3s steps(20) infinite;
 }
 
 footer a:hover {
     background-color: #1d4ed8;
-}
-
-/* Vague pixelisee : le degrade se deplace en escalier (steps) au lieu d'un glissement fluide */
-@keyframes vague-pixel {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
 }
 
 /* ==============================
