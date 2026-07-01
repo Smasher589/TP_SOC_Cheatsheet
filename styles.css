@@ -1,0 +1,262 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    background: linear-gradient(135deg, #eef2f7, #ffffff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2 {
+    color: #1d4ed8;
+}
+
+/* ==============================
+   EN-TETE - Flexbox
+   ============================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+.indicateurs {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #555555;
+}
+
+.indicateurs li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pastille {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pastille.verte { background-color: #16a34a; }
+.pastille.bleue { background-color: #1d4ed8; }
+
+/* ==============================
+   GRILLE PRINCIPALE - CSS Grid
+   ============================== */
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px 30px;
+    flex: 1;
+}
+
+/* ==============================
+   PANNEAU LATERAL - Filtres
+   ============================== */
+aside {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: fit-content;
+}
+
+aside h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+form input[type="text"],
+form select {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+form input[type="submit"] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #1d4ed8;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1e40af;
+}
+
+.legende {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #555555;
+}
+
+.legende li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.point.rouge  { background-color: #dc2626; }
+.point.orange { background-color: #ea580c; }
+.point.bleu   { background-color: #1d4ed8; }
+
+/* ==============================
+   SECTION CENTRALE - Journal SIEM
+   ============================== */
+section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(220, 38, 38, 0.15);
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   TABLEAU SIEM
+   ============================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #555555;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+tr.critique { border-left: 4px solid #dc2626; }
+tr.warning  { border-left: 4px solid #ea580c; }
+tr.info     { border-left: 4px solid #1d4ed8; }
+
+.action {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.action.bloque    { background-color: #fee2e2; color: #dc2626; }
+.action.surveille { background-color: #ffedd5; color: #ea580c; }
+.action.autorise  { background-color: #dcfce7; color: #16a34a; }
+
+.etiquette {
+    display: none;
+    font-weight: bold;
+    color: #555555;
+}
+
+/* ==============================
+   PIED DE PAGE - Flexbox
+   ============================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    border-top: 2px solid #e2e8f0;
+    font-size: 12px;
+    color: #777777;
+}
+
+/* ==============================
+   RESPONSIVE - Une seule bascule
+   Aucun scroll : la grille et le
+   tableau passent en colonne unique
+   ============================== */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 12px;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    td {
+        border-bottom: none;
+        padding: 4px 10px;
+    }
+
+    .etiquette {
+        display: inline;
+    }
+}

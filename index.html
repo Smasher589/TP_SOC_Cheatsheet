@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Security Console</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- EN-TETE : Flexbox space-between -->
+    <header>
+        <h1>SOC Security Events</h1>
+        <ul class="indicateurs">
+            <li><span class="pastille verte"></span> EPS : 1 284 / s</li>
+            <li><span class="pastille bleue"></span> Base de données : Connectée</li>
+        </ul>
+    </header>
+
+    <!-- GRILLE PRINCIPALE : CSS Grid (aside 300px / section 1fr) -->
+    <main>
+
+        <!-- PANNEAU LATERAL : Filtres de recherche -->
+        <aside>
+            <h2>Filtres</h2>
+            <form>
+                <label for="ip-source">Adresse IP source</label>
+                <input type="text" id="ip-source" name="ip-source" placeholder="ex : 185.220.101.5">
+
+                <label for="criticite">Niveau de criticité</label>
+                <select id="criticite" name="criticite">
+                    <option value="critique">Critique</option>
+                    <option value="warning">Warning</option>
+                    <option value="info">Info</option>
+                </select>
+
+                <input type="submit" value="Appliquer les filtres">
+            </form>
+
+            <ul class="legende">
+                <li><span class="point rouge"></span> Critique</li>
+                <li><span class="point orange"></span> Warning</li>
+                <li><span class="point bleu"></span> Info</li>
+            </ul>
+        </aside>
+
+        <!-- SECTION CENTRALE : Tableau des événements SIEM -->
+        <section>
+            <h2>Journal des Événements SIEM</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horodatage</th>
+                        <th>ID Événement</th>
+                        <th>IP Source</th>
+                        <th>Type d'Attaque</th>
+                        <th>Action Pare-feu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="critique">
+                        <td><span class="etiquette">Horodatage : </span>06:12:04</td>
+                        <td><span class="etiquette">ID Événement : </span>EVT-942</td>
+                        <td><span class="etiquette">IP Source : </span>185.220.101.5</td>
+                        <td><span class="etiquette">Type d'Attaque : </span>Brute Force SSH</td>
+                        <td><span class="etiquette">Action Pare-feu : </span><span class="action bloque">Bloqué</span></td>
+                    </tr>
+                    <tr class="warning">
+                        <td><span class="etiquette">Horodatage : </span>06:09:47</td>
+                        <td><span class="etiquette">ID Événement : </span>EVT-941</td>
+                        <td><span class="etiquette">IP Source : </span>91.240.118.22</td>
+                        <td><span class="etiquette">Type d'Attaque : </span>Scan de Ports (Nmap)</td>
+                        <td><span class="etiquette">Action Pare-feu : </span><span class="action surveille">Surveillé</span></td>
+                    </tr>
+                    <tr class="critique">
+                        <td><span class="etiquette">Horodatage : </span>05:58:12</td>
+                        <td><span class="etiquette">ID Événement : </span>EVT-938</td>
+                        <td><span class="etiquette">IP Source : </span>45.155.204.77</td>
+                        <td><span class="etiquette">Type d'Attaque : </span>Injection SQL</td>
+                        <td><span class="etiquette">Action Pare-feu : </span><span class="action bloque">Bloqué</span></td>
+                    </tr>
+                    <tr class="info">
+                        <td><span class="etiquette">Horodatage : </span>05:47:30</td>
+                        <td><span class="etiquette">ID Événement : </span>EVT-935</td>
+                        <td><span class="etiquette">IP Source : </span>10.0.0.14</td>
+                        <td><span class="etiquette">Type d'Attaque : </span>Connexion VPN</td>
+                        <td><span class="etiquette">Action Pare-feu : </span><span class="action autorise">Autorisé</span></td>
+                    </tr>
+                    <tr class="warning">
+                        <td><span class="etiquette">Horodatage : </span>05:32:58</td>
+                        <td><span class="etiquette">ID Événement : </span>EVT-930</td>
+                        <td><span class="etiquette">IP Source : </span>203.0.113.44</td>
+                        <td><span class="etiquette">Type d'Attaque : </span>Scan de Vulnérabilités</td>
+                        <td><span class="etiquette">Action Pare-feu : </span><span class="action surveille">Surveillé</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- PIED DE PAGE : Flexbox space-between -->
+    <footer>
+        <span>SOC Console v1.0</span>
+        <span>Conformité SecOps : ISO 27001 — Statut OK</span>
+        <span>Dernière synchronisation : 06:12:09</span>
+    </footer>
+
+</body>
+</html>
