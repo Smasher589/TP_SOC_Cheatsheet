@@ -228,12 +228,17 @@ footer {
 }
 
 footer a {
-    color: #1d4ed8;
+    display: inline-block;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font-weight: bold;
     text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 20px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    background-color: #1e40af;
 }
 
 /* ==============================
@@ -267,5 +272,15 @@ footer a:hover {
 
     .etiquette {
         display: inline;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer a {
+        width: 100%;
+        text-align: center;
     }
 }
